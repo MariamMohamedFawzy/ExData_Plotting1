@@ -8,6 +8,7 @@ new_data <- mydata[mydata$Date >= as.Date(strptime("1/2/07", "%d/%m/%y")) & myda
 
 new_data$Global_active_power = as.numeric(new_data$Global_active_power)
 
+new_data$full_date = as.POSIXct(paste(new_data$Date, new_data$Time), format="%Y-%m-%d %H:%M:%S")
 
 library(ggplot2)
 
